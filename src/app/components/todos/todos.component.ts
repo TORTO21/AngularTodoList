@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../models/Todo'
+import { Todo } from '../../models/Todo'
 
 @Component({
   selector: 'app-todos',
@@ -27,7 +27,7 @@ export class TodosComponent implements OnInit {
       {
         id: 3,
         title: "Third Todo",
-        completed: true,
+        completed: false,
       },
     ]
   }
