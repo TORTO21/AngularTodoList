@@ -19,4 +19,13 @@ export class TodosComponent implements OnInit {
     })
   }
 
+  deleteTodo(todo:Todo) {
+    // Updates UI
+    console.log('delete me from parent Todo component')
+    this.todos = this.todos.filter(otherTodo => otherTodo.id !== todo.id)
+
+    // Updates Server
+    this.todoService.deleteTodo(todo).subscribe()
+  }
+
 }
