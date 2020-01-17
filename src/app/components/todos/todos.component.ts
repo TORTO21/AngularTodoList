@@ -28,4 +28,14 @@ export class TodosComponent implements OnInit {
     this.todoService.deleteTodo(todo).subscribe()
   }
 
+  addTodo(todo:Todo) {
+    // Add to UI
+    console.log('adding from todo-item comp')
+    this.todoService.addTodo(todo).subscribe(todo => {
+      this.todos.push(todo)
+    })
+    // Add to Server
+  }
+
+
 }

@@ -1,9 +1,13 @@
-<form class="form">
+<form class="form" (ngSubmit)="onSubmit()">
+  <!-- ngmodel is [()] because it's 2 way data binding -->
   <input
     type="text"
     name="title"
     [(ngModel)]="title"
     placeholder="Add Todo..."
   >
+  <!-- title is currently a property and bound to ngModel -->
+  <!-- {{ title }} -->
   <input type="submit" value="submit" class="btn">
 </form>
+<!-- ngmodel is [()] because it's 2 way data binding -->

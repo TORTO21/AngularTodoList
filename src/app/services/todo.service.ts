@@ -41,13 +41,17 @@ export class TodoService {
   }
 
   // Toggle Completed
-  toggleCompleted(todo: Todo):Observable<any> {
+  toggleCompleted(todo: Todo): Observable<any> {
     const url = `${this.todosURL}/${todo.id}`
     return this.http.put(url, todo, httpOptions)
   }
 
-  deleteTodo(todo:Todo):Observable<Todo> {
+  deleteTodo(todo:Todo): Observable<Todo> {
     const url = `${this.todosURL}/${todo.id}`
     return this.http.delete<Todo>(url, httpOptions)
+  }
+
+  addTodo(todo:Todo): Observable<Todo> {
+    return this.http.post<Todo>(this.todosURL, todo, httpOptions)
   }
 }
